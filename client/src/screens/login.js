@@ -34,8 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
-  const [name, setName]=useState('');
-  const [pass, setPass]=useState('');
   const nameValue = useRef('');
   const passValue = useRef('');
   const sendValue = () => {
