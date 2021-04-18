@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Container,Grid,Typography, Paper, List, ListItem } from '@material-ui/core';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -45,6 +45,20 @@ export default function Categories() {
     const addToCart=()=>{
         alert("called")
     };
+
+    useEffect(() => {
+        fetch("http://localhost:5000/zain")
+          .then(res=>res.json())
+          .then(
+            (result) => {
+                console.log(result)
+            },
+            (error) => {
+                console.log(error)
+            }
+          )
+      }, [])
+
     return (
         <Container component="main">
             <Typography component="h1" variant="h5" style={{padding:50, fontSize:50}}>

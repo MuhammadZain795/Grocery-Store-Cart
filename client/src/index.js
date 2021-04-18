@@ -5,6 +5,6 @@ import Cart from './screens/cart';
 import Categories from './screens/categories';
 import Login from './screens/login';
 ReactDOM.render(
-    <Cart />,
+    <Categories />,
   document.getElementById('root')
 );
