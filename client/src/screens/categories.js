@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Container,Grid,Typography, Paper, List, ListItem } from '@material-ui/core';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -24,12 +24,15 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Categories() {
+
     const classes = useStyles();
     const [checked, setChecked] = React.useState([0]);
+    
 
     const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
+    
 
     if (currentIndex === -1) {
       newChecked.push(value);
@@ -38,6 +41,9 @@ export default function Categories() {
     }
 
     setChecked(newChecked);
+    };
+    const addToCart=()=>{
+        alert("called")
     };
     return (
         <Container component="main">
@@ -162,7 +168,8 @@ export default function Categories() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary">Add to Cart</Button>
+            color="primary"
+            onClick={addToCart}>Add to Cart</Button>            
         </Container>
     )
 }
