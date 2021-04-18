@@ -44,9 +44,6 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -91,8 +88,6 @@ export default function SignIn() {
           </Button>
         </form>
       </div>
-      <Box mt={8}>
-      </Box>
     </Container>
   );
 }
