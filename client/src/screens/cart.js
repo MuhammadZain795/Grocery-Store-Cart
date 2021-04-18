@@ -1,4 +1,4 @@
-import { Container, Typography, ListItem, List } from '@material-ui/core';
+import { Container, Typography, ListItem, List, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -46,6 +46,11 @@ export default function Cart() {
                 </Paper>
                 </Grid>
             </Grid>
+            <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary">Done</Button>    
                 
         </Container>
     )
