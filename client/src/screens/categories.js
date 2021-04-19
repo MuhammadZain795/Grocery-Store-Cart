@@ -27,7 +27,15 @@ export default function Categories() {
 
     const classes = useStyles();
     const [checked, setChecked] = React.useState([0]);
-    
+    const [cat1, setCat1]=useState('')
+    const [cat2, setCat2]=useState('')
+    const [cat3, setCat3]=useState('')
+    const [cat4, setCat4]=useState('')
+
+    const [cat1Items, setCat1Items]=useState([])
+    const [cat2Items, setCat2Items]=useState([])
+    const [cat3Items, setCat3Items]=useState([])
+    const [cat4Items, setCat4Items]=useState([])
 
     const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -51,7 +59,31 @@ export default function Categories() {
           .then(res=>res.json())
           .then(
             (result) => {
-                console.log(result)
+                setCat1(result[0].categoryname)
+                cat1Items.push(result[0].itemname);
+                cat1Items.push(result[1].itemname)
+                cat1Items.push(result[2].itemname);
+                cat1Items.push(result[3].itemname)
+
+                setCat2(result[4].categoryname)
+                cat2Items.push(result[4].itemname);
+                cat2Items.push(result[5].itemname)
+                cat2Items.push(result[6].itemname);
+                cat2Items.push(result[7].itemname)
+
+                setCat3(result[8].categoryname)
+                cat3Items.push(result[8].itemname);
+                cat3Items.push(result[9].itemname)
+                cat3Items.push(result[10].itemname);
+                cat3Items.push(result[11].itemname)
+
+                setCat4(result[12].categoryname)
+                cat4Items.push(result[12].itemname);
+                cat4Items.push(result[13].itemname)
+                cat4Items.push(result[14].itemname);
+                cat4Items.push(result[15].itemname)
+                console.log(cat4Items)
+
             },
             (error) => {
                 console.log(error)
@@ -69,8 +101,8 @@ export default function Categories() {
                 <Grid item xs={3}>
                 <Paper className={classes.paper}>
                 <List className={classes.root}>
-                    <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>Fruits</ListItem>
-                    {['Apple','Banana','PineApple','Watermelon'].map((value) => {
+                    <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>{cat1}</ListItem>
+                    {cat1Items.map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (
@@ -97,8 +129,8 @@ export default function Categories() {
             <Grid item xs={3}>
                 <Paper className={classes.paper}>
                 <List className={classes.root}>
-                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>Vegetables</ListItem>
-                    {['Beets','Asparagus','Spinach','Red Pepper'].map((value) => {
+                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>{cat2}</ListItem>
+                    {cat2Items.map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (
@@ -125,8 +157,8 @@ export default function Categories() {
             <Grid item xs={3}>
                 <Paper className={classes.paper}>
                 <List className={classes.root}>
-                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>Snacks</ListItem>
-                    {['Lays','Kurkure','Wavy','Doritos'].map((value) => {
+                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>{cat3}</ListItem>
+                    {cat3Items.map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (
@@ -153,8 +185,8 @@ export default function Categories() {
             <Grid item xs={3}>
                 <Paper className={classes.paper}>
                 <List className={classes.root}>
-                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>Chocolates</ListItem>
-                    {['Snickers','Dairy Milk','Mars','Twix'].map((value) => {
+                <ListItem style={{fontWeight:'bold', color:'black', fontSize:20}}>{cat4}</ListItem>
+                    {cat4Items.map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
 
                     return (

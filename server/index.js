@@ -27,7 +27,7 @@ connection.connect((err)=>{
 })
 
 app.get('/zain',function(req,res){
-    connection.query("SELECT itemprice FROM items;", (err, rows)=>{
+    connection.query("SELECT categoryname, itemname FROM categories, items where categories.idcategories=items.idcatogory;", (err, rows)=>{
         if(err){
             console.log(err)
         }
